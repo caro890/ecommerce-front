@@ -1,0 +1,117 @@
+/* Contenedor de todo el menú */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+/* Header del menu */
+.main .header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2%;
+
+    font-size: x-large;
+    font-weight: 600;
+}
+
+/* div que envuelve un categoria banner y un productos box */
+.main .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.section .section {
+    margin-left: 5%;
+}
+
+/* Denominacion de categorias Padres */
+.section .title {
+    width: 100%;
+    text-align: left;
+    font-size: x-large;
+    color: var(--font);
+    font-weight: 500;
+}
+
+/* Contenedor de los productos */
+.section .productosBox {
+    display : flex;
+    flex-direction : row ;
+    align-content: left;
+    justify-content : space-around;
+    flex-flow : wrap;
+    
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos de las tarjetas de productos */
+.productosBox .card {
+    background-color: white;
+
+    border: .5vh solid var(--back2);
+    border-radius: 5%;
+
+    height: 40vh;
+    width: 40vh;
+
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    margin-right: 2vh;
+
+    text-align: center;
+    color: var(--mainColor);
+    font-weight: 500;
+    text-decoration: none;
+
+    box-shadow: 0 4px 8px 0 rgba(10, 48, 68, 0.2), 0 6px 20px 0 rgba(10, 48, 68, 0.19);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+/* Contenedor de imagen de la card de producto */
+.card .imgBox {
+    height: 80%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    margin-bottom: 1vh;
+}
+
+/* Imagen de la card producto */
+.imgBox img {
+    max-height: 100%;
+    width: auto;
+}
+
+@media screen and (max-width:1200px) {
+    .card {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .card {
+        width: 90%;
+    }
+}

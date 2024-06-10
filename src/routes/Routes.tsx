@@ -7,14 +7,16 @@ import { ArticuloInsumoService } from "../services/ArticuloInsumoService";
 import { Suspense, lazy } from "react";
 import { Loader } from "../components/Loader/Loader";
 import { PedidoFormulario, clienteLoader } from "../components/Pedido/PedidoFormulario";
-import { menuProductosLoader } from "../components/MenuProductos/MenuProductos";
-import SubMenu from "../components/SubMenu/SubMenu";
+//import { menuProductosLoader } from "../components/MenuProductos/MenuProductos";
+//import SubMenu from "../components/SubMenu/SubMenu";
 import { PageNotFound } from "../components/PageNotFound/PageNotFound";
 import { AfterPaymentMP } from "../components/MercadoPago/AfterPaymentMP";
+import { menuLoader } from "../components/OnePageMenu/Menu";
 
 const Sucursales = lazy(() => import("../components/Sucursales/Sucursales"));
-const Menu = lazy(() => import("../components/Menu/Menu"));
-const MenuProductos = lazy(() => import("../components/MenuProductos/MenuProductos"));
+//const Menu = lazy(() => import("../components/Menu/Menu"));
+const Menu = lazy(() => import("../components/OnePageMenu/Menu"));
+//const MenuProductos = lazy(() => import("../components/MenuProductos/MenuProductos"));
 const DetalleMenu = lazy(() => import("../components/DetalleMenu/DetalleMenu"));
 
 const router = createBrowserRouter(
@@ -23,9 +25,11 @@ const router = createBrowserRouter(
             <Route index element={<Empresas />} />
             <Route path="sucursales/:id?" element={<Sucursales />} />
 
-            <Route path="menu/:id?" element={<Menu/>}/>
+            {/*<Route path="menu/:id?" element={<Menu/>}/>
             <Route path="subMenu/:id" element={<SubMenu/>}/>
-            <Route path="productos/:id?" element={<MenuProductos />} loader={menuProductosLoader} />
+            <Route path="productos/:id?" element={<MenuProductos />} loader={menuProductosLoader} />*/}
+
+            <Route path="menu/:id" element={<Menu/>} loader={menuLoader} />
 
             <Route path="detalle/:id?" element={<DetalleMenu service={new ArticuloManufacturadoService()} />} />
             <Route path="detalle/otro/:id?" element={<DetalleMenu service={new ArticuloInsumoService()}/>} />
