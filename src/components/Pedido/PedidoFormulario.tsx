@@ -269,7 +269,7 @@ export const PedidoFormulario = () => {
 
     return (
         <div className={styles.formContainer}>
-            <form onSubmit={handleSubmit} className="container w-50">
+            <form onSubmit={handleSubmit} className={`${styles.contenedor} container w-100`}>
                 {section === 2 && envio == false && (
                     <div>
                         <h2>Seleccione el domicilio para la entrega</h2>

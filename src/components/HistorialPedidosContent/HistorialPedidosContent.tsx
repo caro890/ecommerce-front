@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button, Modal, Form, ModalBody } from 'react-bootstrap';
 import './HistorialPedidosContent.css';
 import { Link, Navigate } from 'react-router-dom';
+import { cilArrowCircleBottom } from '@coreui/icons';
+import CIcon from '@coreui/icons-react';
 
 const HistorialPedidosContent = ({ estado = '', id = 0, fechaPedido = '', horaEstimadaFinalizacion = '' }) => {
 
@@ -14,11 +16,12 @@ const HistorialPedidosContent = ({ estado = '', id = 0, fechaPedido = '', horaEs
 
       <div className="content_div">
         <div className="detalles_div" id="grilla_container">
-          <p>{id}</p>
+          {/* <p>{id}</p> */}
           <p>{estado}</p>
           <p>{fechaPedido}</p>
           <p>{horaEstimadaFinalizacion}</p>
-          <a className='btn btn-primary' onClick={() => descargarFactura(id)}>Descargar Factura</a>
+          <a onClick={() => descargarFactura(id)}><CIcon icon={cilArrowCircleBottom} className="icon" /></a>
+          
 
         </div>
       </div>

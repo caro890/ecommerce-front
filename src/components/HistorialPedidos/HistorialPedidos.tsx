@@ -64,11 +64,11 @@ const HistorialPedidos = () => {
                 usuarioLogueado ?
                     <>
 
-                        <div className='header-historialpedidos'>
-                            <h4>Id</h4>
+                        <div className='header-historialpedidos' style={{ textAlign: 'center' }}>
+                            {/* <h4>Id</h4> */}
                             <h4>Estado</h4>
                             <h4>Fecha</h4>
-                            <h4>Hora Estimada</h4>
+                            <h4>Hora <br /> Estimada</h4>
                             <h4>Factura</h4>
                         </div>
                         {pedidosByUserId.length != 0 ?
@@ -86,7 +86,7 @@ const HistorialPedidos = () => {
                         }
                     </>
                     :
-                    <div style={{ textAlign: 'center' }}>
+                    <div style={{ textAlign: 'center', margin: '10px' }}>
                         <p>Debes estar logueado para ver el contenido de esta pantalla</p>
                     </div>
 

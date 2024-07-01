@@ -1,12 +1,23 @@
-#grilla_container{
+#grilla_container {
     display: flex;
     flex-direction: row;
     margin: 24px;
     justify-content: space-between;
 }
 
-.content_div{
+.content_div {
     border: 1px solid;
     border-color: var(--mainColor);
     margin: 10px;
+}
+
+.icon {
+    width: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .icon {
+        width: 1.5rem;
+    }
 }
