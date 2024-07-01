@@ -126,7 +126,7 @@ export const Carrito = () => {
 
           </>
           :
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center', margin: '10px' }}>
             <p>Debes estar logueado para ver el contenido de esta pantalla</p>
           </div>
       }

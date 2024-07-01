@@ -96,7 +96,7 @@ export const DetalleMenu: FC<IPropsDetalleMenu> = ({
                           </div>
                         </div>
                         :
-                        <div>
+                        <div style={{ margin: '10px'}}>
                           Debés iniciar sesión para comprar
                         </div>
                     }

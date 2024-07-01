@@ -98,7 +98,7 @@ export const PromoDetalle: FC<IPropsPromoDetalle> = ({
                           </div>
                         </div>
                         :
-                        <div>
+                        <div style={{ margin: '10px'}}>
                           Debés iniciar sesión para comprar
                         </div>
                     }
