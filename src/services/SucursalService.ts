@@ -7,7 +7,7 @@ export class SucursalService extends BackendClient<Sucursal> {
 
     //no está en el back
     async getCategoriasBySucursalId(sucursalId: number): Promise<Categoria[] | undefined> {
-        const response = await fetch(`${this.baseUrl}/categorias/${sucursalId}`);
+        const response = await fetch(`${this.baseUrl}/buscar/ecommerce/${sucursalId}`);
         if (!response.ok) {
           return undefined;
         }

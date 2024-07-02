@@ -5,16 +5,18 @@ import { useEffect, useState } from "react"
 import { Categoria } from "../../types/Articulos/Categoria"
 import { SucursalService } from "../../services/SucursalService"
 import { BotonVolver } from "../BotonVolver/BotonVolver"
+import { CategoriaService } from "../../services/CategoriaService"
 
 export const Menu = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-  const sucursalService = new SucursalService();
+  //const sucursalService = new SucursalService();
+  const categoriaService = new CategoriaService();
 
   useEffect(() => {
-    sucursalService.getCategoriasBySucursalId(Number(id)).then((data) => 
+    categoriaService.getCategoriasBySucursalId(Number(id)).then((data) => 
       data != undefined ? setCategorias(data) : setCategorias([])
     );
   }, []);
