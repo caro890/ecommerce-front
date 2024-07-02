@@ -1,6 +1,6 @@
 import { AbstractBackendClient } from "./AbstractBackendClient";
 
-export const base: string = "http://localhost:8092/";
+export const base: string = "http://localhost:8095/";
 
 export abstract class BackendClient<T> extends AbstractBackendClient<T> {
 

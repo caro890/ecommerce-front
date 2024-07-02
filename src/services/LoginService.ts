@@ -1,6 +1,6 @@
 import Usuario from "../types/Usuario";
 
-const BASE_URL = "http://localhost:8092/";
+const BASE_URL = "http://localhost:8095/";
 
 export const LoginService = {
    

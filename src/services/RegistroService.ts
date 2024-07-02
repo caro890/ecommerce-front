@@ -1,6 +1,6 @@
 import UsuarioClienteJSON from "../types/UsuarioClienteJSON";
 
-const BASE_URL = "http://localhost:8092/";
+const BASE_URL = "http://localhost:8095/";
 
 export const RegistroService = {
 

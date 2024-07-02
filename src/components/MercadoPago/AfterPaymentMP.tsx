@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 export const AfterPaymentMP = () => {
     const { state } = useParams();
+    console.log(state);
     const pedidoService = new PedidoService();
 
     const pedidoIdString = localStorage.getItem("pedidoId");
@@ -13,7 +14,7 @@ export const AfterPaymentMP = () => {
     }
 
     switch (state) {
-        case "mpsuccess":
+        case "success":
             // cambiar estado a pagado
             pedidoService.cambiarEstado(pedidoId, "PAGADO")
                 .then(response => {
@@ -24,7 +25,7 @@ export const AfterPaymentMP = () => {
                 });
             break;
 
-        case "mpfailure":
+        case "failure":
             // cambiar estado a cancelado
             pedidoService.cambiarEstado(pedidoId, "CANCELADO")
                 .then(response => {
