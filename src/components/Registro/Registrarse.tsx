@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RegistroService from '../../services/RegistroService';
-import UsuarioCliente from '../../types/UsuarioClienteJSON';
 import UsuarioClienteJSON from '../../types/UsuarioClienteJSON';
 
 const Registrarse = () => {
@@ -37,11 +36,6 @@ const Registrarse = () => {
 
         //pasos para registrarse
         console.log(usuarioCliente);
-
-        // if (usuario?.rol == undefined || usuario?.rol === "") {
-        //     setTxtValidacion("Ingrese el rol");
-        //     return;
-        // }
 
         if (usuarioCliente?.usuarioCliente?.email == undefined || usuarioCliente?.usuarioCliente?.email === "") {
             setTxtValidacion("Ingrese el nombre de usuario");
@@ -90,52 +84,8 @@ const Registrarse = () => {
 
     }
 
-    // const [rol, setRol] = useState<string>('');
-
-    // const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    //     setRol(event.target.value);
-    //     usuario.rol = event.target.value;
-    //     setUsuario(usuario);
-    // };
-
     return (
         <>
-            {/* 
-            <Container className="d-flex justify-content-center align-items-center vh-100">
-                <div className="border p-4 bg-light shadow-sm rounded" style={{ width: '100%', maxWidth: '400px' }}>
-                    <h2 className="text-center mb-4">Registrarse</h2>
-                    <Form style={{ display: 'flex', flexDirection: 'column' }}>
-                        
-                        <Form.Group controlId="usuario">
-                            <Form.Label>Usuario</Form.Label>
-                            <Form.Control
-                                type="text"
-                                defaultValue={usuario.email}
-                                onChange={e => usuario.email = String(e.target.value)}
-                                placeholder="Ingresa un nombre de usuario"
-                            />
-                        </Form.Group>
-                        <Form.Group controlId="contraseña" className="mt-3">
-                            <Form.Label>Contraseña</Form.Label>
-                            <Form.Control
-                                type="password"
-                                defaultValue={usuario.claveEncriptada}
-                                onChange={e => usuario.claveEncriptada = String(e.target.value)}
-                                placeholder="Ingresa una contraseña"
-                            />
-                        </Form.Group>
-                        <Button onClick={registrarse} type="button" className="w-100 mt-4">
-                            Registrarse
-                        </Button>
-                        <div>
-                            <p style={{ color: 'red', lineHeight: 5, padding: 5 }}>{txtValidacion}</p>
-                        </div>
-                    </Form>
-                </div>
-            </Container>
-             */}
-
-
             <Container className="d-flex justify-content-center align-items-center vh-100">
                 <div className="border p-4 bg-light shadow-sm rounded" style={{ width: '100%', maxWidth: '400px' }}>
                     <h2 className="text-center mb-4">Registrarse</h2>

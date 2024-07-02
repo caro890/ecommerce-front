@@ -1,16 +1,11 @@
-import React, { FormEvent, useEffect, useState } from 'react'
-import { Button, Nav } from 'react-bootstrap';
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react'
 import '../css/historialpedidos.css'
 import { PedidoService } from '../../services/PedidoService';
 import { Pedido } from '../../types/Pedidos/Pedido';
 import HistorialPedidosContent from '../HistorialPedidosContent/HistorialPedidosContent';
 import Usuario from '../../types/Usuario';
-import { Roles } from '../../types/Roles';
 
 const HistorialPedidos = () => {
-    const navigate = useNavigate();
-    const [pedidos, setPedidos] = useState<Pedido[]>([]);
     const [pedidosByUserId, setPedidosByUserId] = useState<Pedido[]>([]);
     const service = new PedidoService();
 
@@ -76,7 +71,7 @@ const HistorialPedidos = () => {
 
                                 //muestro solo los pedidos de ese user
                                 return (
-                                    <HistorialPedidosContent key={pedido.id} estado={pedido.estadoPedido} id={pedido.id} fechaPedido={pedido.fechaPedido.toString()} horaEstimadaFinalizacion={pedido.horaEstimadaFinalizacion} />
+                                    <HistorialPedidosContent key={pedido.id} estado={pedido.estado.toString()} id={pedido.id} fechaPedido={pedido.fechaPedido.toString()} horaEstimadaFinalizacion={pedido.horaEstimadaFinalizacion} />
                                 );
                             })
                             :

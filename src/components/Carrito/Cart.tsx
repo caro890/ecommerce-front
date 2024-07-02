@@ -8,7 +8,6 @@ import formatPrice from "../../types/format/priceFormat"
 import { calcularTotal } from "../../types/Pedidos/Pedido"
 import { useState } from "react"
 import Usuario from "../../types/Usuario"
-import { Articulo } from "../../types/Articulos/Articulo"
 
 export const Carrito = () => {
   const carrito = useCarrito();

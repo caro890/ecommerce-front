@@ -75,7 +75,7 @@ const Login = () => {
                     <Button onClick={login} type="button" className="w-100 mt-4">
                         Ingresar
                     </Button>
-                    <Button onClick={e => navigate('/registrarse')} type="button" className="w-100 mt-4 btn btn-secondary">
+                    <Button onClick={() => navigate('/registrarse')} type="button" className="w-100 mt-4 btn btn-secondary">
                         Registrarse
                     </Button>
                     <div>

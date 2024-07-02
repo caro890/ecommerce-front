@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { PromosService } from "../../services/PromosService";
 import { Promo } from "../../types/Promos/Promo";
 import { BotonVolver } from "../BotonVolver/BotonVolver";
-import Menu from "../Menu/Menu";
 import styles from "../Menu/Menu.module.css"
 
 export const Promos = () => {

@@ -1,10 +1,7 @@
-import { useEffect } from "react";
 import { useLoaderData } from "react-router";
 import { Form } from "react-bootstrap";
 import { DomicilioService } from "../../services/DomicilioService";
 import { Domicilio } from "../../types/Domicilio/Domicilio";
-//import Swal from "sweetalert2";
-
 
 export const DomicilioCrud = () => {
   const domicilios = useLoaderData() as Domicilio[];

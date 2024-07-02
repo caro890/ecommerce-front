@@ -2,60 +2,20 @@ import { useEffect, useState } from "react";
 import styles from "../Pedido/Pedido.module.css"
 import { useCarrito } from "../../hooks/useCarrito";
 import Swal from "sweetalert2";
-import { Form, LoaderFunction, useLoaderData } from "react-router-dom";
+import { LoaderFunction, useLoaderData } from "react-router-dom";
 import { Cliente } from "../../types/Personas/Cliente";
 import { Domicilio } from "../../types/Domicilio/Domicilio";
 import { formatDomicilio } from "../../types/format/formatDomicilio";
-//import { ClienteService } from "../../services/ClienteService";
 import { PedidoService } from "../../services/PedidoService";
 import { Pedido, PedidoPost } from "../../types/Pedidos/Pedido";
 import { getSucursal } from "../Header/Header";
 import { CheckoutMP } from "../MercadoPago/CheckoutMP";
 import { PreferenceMP } from "../../types/MercadoPago/PreferenceMP";
 import { DetallePedido, DetallePedidoPost } from "../../types/Pedidos/DetallePedido";
-//import { Sucursal } from "../../types/Empresa/Sucursal";
-import { SucursalService } from "../../services/SucursalService";
 import { ClienteService } from "../../services/ClienteService";
-import Usuario from "../../types/Usuario";
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from "react-bootstrap";
+import { Modal, ModalBody, ModalHeader, ModalTitle } from "react-bootstrap";
 import { DomicilioForm } from "./DomicilioForm";
 import { DomicilioService } from "../../services/DomicilioService";
-import { Articulo } from "../../types/Articulos/Articulo";
-import { PromoDetalles } from "../../types/Promos/PromoDetalles";
-import { Wallet } from "@mercadopago/sdk-react";
-
-
-
-
-// const domicilio: Domicilio = {
-//     "id": 3,
-//     "eliminado": false,
-//     "calle": "Cangallo",
-//     "numero": 800,
-//     "piso": 0,
-//     "cp": 5519,
-//     "nroDpto": 1,
-//     "localidad": {
-//         "id": 1,
-//         "eliminado": false,
-//         "nombre": "Luján de Cuyo",
-//         "provincia": {
-//             "id": 1,
-//             "eliminado": false,
-//             "nombre": "Mendoza",
-//             "pais": {
-//                 "id": 1,
-//                 "eliminado": false,
-//                 "nombre": "Argentina"
-//             }
-//         }
-//     }
-// }
-
-
-
-
-
 
 export const PedidoFormulario = () => {
     const carrito = useCarrito();
@@ -65,7 +25,6 @@ export const PedidoFormulario = () => {
     const [envio, setEnvio] = useState<boolean>(false);
     const [realizado, setRealizado] = useState<boolean>(false);
     const [mercadoPagoID, setMercadoPagoID] = useState<PreferenceMP>();
-    const [newPedido, setNewPedido] = useState<Pedido | undefined>();
 
     const [domicilioSucursal, setDomicilioSucursal] = useState<Domicilio | undefined>();
 
@@ -148,29 +107,6 @@ export const PedidoFormulario = () => {
         setShowModal(false);
     }
 
-    // const DomicilioForm: React.FC = () => {
-    //     const [formAgregarDomicilioData, setFormAgregarDomicilioData] = useState({
-    //         calle: '',
-    //         cp: '',
-    //         nrodpto: '',
-    //         numero: '',
-    //         piso: '',
-    //         localidad: '',
-    //         provincia: '',
-    //         pais: ''
-    //     });
-
-    //     const handleAgregarDomicilioChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    //         const { name, value } = event.target;
-    //         setFormAgregarDomicilioData({
-    //             ...formAgregarDomicilioData,
-    //             [name]: value
-    //         });
-    //     };
-
-    //     const handleAgregarDomicilioSubmit = () => { };
-
-
     //formulario pedido
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -246,7 +182,6 @@ export const PedidoFormulario = () => {
         var aux: Pedido | undefined = await service.create(newPedido);
 
         if (aux != undefined) {
-            setNewPedido(aux);
 
             localStorage.setItem("pedidoId", String(aux.id));
             console.log("aux: "+aux);
@@ -384,60 +319,15 @@ export const PedidoFormulario = () => {
             {realizado &&
                 <div className={styles.realizadoDiv}>
                     <h2>Su pedido fue realizado con <p className={styles.exito}>éxito</p></h2>
-                    {/* envio ?
-                        <p>Tiempo estimado para retirar: {newPedido?.horaEstimadaFinalizacion}</p>
-                        :
-                        <p>Tiempo estimado del delivery: {newPedido?.horaEstimadaFinalizacion}</p>
-                    */}
                 </div>
             }
         </div>
     )
 }
 
-export const clienteLoader: LoaderFunction = async ({ params, request }) => {
+export const clienteLoader: LoaderFunction = async ({ params }) => {
     const idUsuario = parseInt(params.idUsuario as string, 10);
-
-
     const service = new ClienteService();
     var res = await service.getByUserId(idUsuario);
-
-    // console.log(res);
-
-    // var res: Cliente = {
-    //     id: 1,
-    //     eliminado: false,
-    //     nombre: "Sebastian",
-    //     apellido: "Wilder",
-    //     telefono: "2615920825",
-    //     fechaNacimiento: new Date(),
-    //     domicilios: [
-    //         {
-    //             id: 3,
-    //             eliminado: false,
-    //             calle: "Cangallo",
-    //             numero: 800,
-    //             piso: 0,
-    //             cp: 5519,
-    //             nroDpto: 1,
-    //             localidad: {
-    //                 id: 1,
-    //                 eliminado: false,
-    //                 nombre: "Luján de Cuyo",
-    //                 provincia: {
-    //                     id: 1,
-    //                     eliminado: false,
-    //                     nombre: "Mendoza",
-    //                     pais: {
-    //                         id: 1,
-    //                         eliminado: false,
-    //                         nombre: "Argentina"
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     ]
-    // }
-
     return res;
 }

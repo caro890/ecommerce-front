@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-import { Button, Modal, Form, ModalBody } from 'react-bootstrap';
 import './HistorialPedidosContent.css';
-import { Link, Navigate } from 'react-router-dom';
 import { cilArrowCircleBottom } from '@coreui/icons';
 import CIcon from '@coreui/icons-react';
 

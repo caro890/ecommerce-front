@@ -1,10 +1,7 @@
-import { useEffect } from "react";
-import { useLoaderData/*, useNavigate*/ } from "react-router";
+import { useLoaderData } from "react-router";
 import { Form } from "react-bootstrap";
 import { LocalidadService } from "../../services/LocalidadService";
 import { Localidad } from "../../types/Domicilio/Localidad";
-//import Swal from "sweetalert2";
-
 
 export const LocalidadesCrud = () => {
   const localidades = useLoaderData() as Localidad[];

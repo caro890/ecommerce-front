@@ -1,11 +1,7 @@
-import { useEffect } from "react";
 import { useLoaderData/*, useNavigate*/ } from "react-router";
 import { Form } from "react-bootstrap";
 import { ProvinciaService } from "../../services/ProvinciaService";
 import { Provincia } from "../../types/Domicilio/Provincia";
-//import Swal from "sweetalert2";
-
-
 
 export const ProvinciasCrud = () => {
   const provincias = useLoaderData() as Provincia[];

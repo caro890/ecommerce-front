@@ -5,7 +5,6 @@ import { useCarrito } from "../../hooks/useCarrito";
 import { useState } from "react";
 import { Roles } from "../../types/Roles";
 import Usuario from "../../types/Usuario";
-import { Nav } from "react-bootstrap";
 import { cilHamburgerMenu } from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 /*import { Form } from "react-bootstrap"
@@ -135,7 +134,7 @@ export const Header = () => {
             :
 
             <div>
-              <button onClick={e => navigate('/login')} className="btn btn-success" type="button">
+              <button onClick={() => navigate('/login')} className="btn btn-success" type="button">
                 Iniciar sesión
               </button>
             </div>

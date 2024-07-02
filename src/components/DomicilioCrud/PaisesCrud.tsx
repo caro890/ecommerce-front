@@ -1,11 +1,7 @@
-import { useEffect } from "react";
 import { useLoaderData/*, useNavigate*/ } from "react-router";
 import { Form } from "react-bootstrap";
 import { PaisService } from "../../services/PaisService";
 import { Pais } from "../../types/Domicilio/Pais";
-//import Swal from "sweetalert2";
-
-
 
 export const PaisesCrud = () => {
   const paises = useLoaderData() as Pais[];

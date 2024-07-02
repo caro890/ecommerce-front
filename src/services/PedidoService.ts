@@ -21,7 +21,7 @@ export class PedidoService extends BackendClient<Pedido> {
   async getByUserId(id: number, email: string): Promise<Pedido[]> {
     const response = await fetch(`${this.baseUrl}/getAllPedidoPorUserId/` + id + `/` + email);
     const data = await response.json();
-    return data as Pedido;
+    return data as Pedido[];
   }
 
 
