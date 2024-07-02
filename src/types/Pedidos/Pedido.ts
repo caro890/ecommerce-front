@@ -26,7 +26,7 @@ export interface Pedido extends Base {
     horaEstimadaFinalizacion: string, //cambiar por hora
     total: number,
     totalCosto: number,
-    estado: Estado,
+    estadoPedido: Estado,
     tipoEnvio: TipoEnvio,
     formaPago: FormaPago,
     fechaPedido: Date,

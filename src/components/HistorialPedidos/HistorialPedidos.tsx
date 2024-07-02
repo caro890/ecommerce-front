@@ -68,7 +68,7 @@ const HistorialPedidos = () => {
                         </div>
                         {pedidosByUserId.length != 0 ?
                             pedidosByUserId.map((pedido: Pedido) => 
-                                <HistorialPedidosContent key={pedido.id} estado={pedido.estado.toString()} id={pedido.id} fechaPedido={pedido.fechaPedido.toString()} horaEstimadaFinalizacion={pedido.horaEstimadaFinalizacion} />
+                                <HistorialPedidosContent key={pedido.id} estado={pedido.estadoPedido.toString()} id={pedido.id} fechaPedido={pedido.fechaPedido.toString()} horaEstimadaFinalizacion={pedido.horaEstimadaFinalizacion} />
                             )
                             :
                             <div style={{ textAlign: 'center' }}>
