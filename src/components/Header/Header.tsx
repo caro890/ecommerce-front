@@ -109,7 +109,7 @@ export const Header = () => {
 
           {usuarioLogueado ?
             <>
-              <Link className={styles.menuItem} to="historialpedidos">Pedidos</Link>
+              <Link className={styles.menuItem} to="historialPedidos">Pedidos</Link>
             </>
             :
             null

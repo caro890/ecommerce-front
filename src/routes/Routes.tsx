@@ -47,17 +47,14 @@ const router = createBrowserRouter(
                 <Route path="carrito" element={<Carrito />} />
             </Route>
 
-            
-            <Route>
-                <Route path="/historialPedidos" element={<HistorialPedidos />} />
-            </Route>
+            <Route path="historialPedidos" element={<HistorialPedidos />} />
 
             <Route path="pedido/:idUsuario" element={<PedidoFormulario />} loader={clienteLoader} />
             <Route path="*" element={<PageNotFound />} />
 
             <Route path="mp/:state" element={<AfterPaymentMP />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registrarse" element={<Registrarse />} />
+            <Route path="login" element={<Login />} />
+            <Route path="registrarse" element={<Registrarse />} />
         </Route>
 
     )
