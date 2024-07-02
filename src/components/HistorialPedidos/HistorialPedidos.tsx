@@ -67,13 +67,9 @@ const HistorialPedidos = () => {
                             <h4>Factura</h4>
                         </div>
                         {pedidosByUserId.length != 0 ?
-                            pedidosByUserId.map((pedido: Pedido) => {
-
-                                //muestro solo los pedidos de ese user
-                                return (
-                                    <HistorialPedidosContent key={pedido.id} estado={pedido.estado.toString()} id={pedido.id} fechaPedido={pedido.fechaPedido.toString()} horaEstimadaFinalizacion={pedido.horaEstimadaFinalizacion} />
-                                );
-                            })
+                            pedidosByUserId.map((pedido: Pedido) => 
+                                <HistorialPedidosContent key={pedido.id} estado={pedido.estado.toString()} id={pedido.id} fechaPedido={pedido.fechaPedido.toString()} horaEstimadaFinalizacion={pedido.horaEstimadaFinalizacion} />
+                            )
                             :
                             <div style={{ textAlign: 'center' }}>
                                 <p>No tiene pedidos registrados.</p>
